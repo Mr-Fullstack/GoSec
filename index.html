@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+    <title>GoSec - Home</title>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header__wrapper">
+            <img class="header__logo" src="assets/images/gosec-logo.png" alt="GoSEc">
+            <form action="">
+                <input class="search" type="search" placeholder="rua, bairro, cidade, estado">
+                <input class="btn btn--search"type="submit" value="buscar">
+            </form>
+            <span>Logar</span>
+        </div>
+        <i class="fas fa-arrow-circle-down arrows-left"></i></div>
+        <i class="fas fa-arrow-circle-down arrows-right"></i></div>
+    </header><!--header-->
+    <nav class="nav">
+        <div class="nav__menu">
+            <ul>
+                <li><a href="">Aplicativo</a></li>
+                <li><a href="">Projeto</a></li>
+            </ul>
+        </div>
+        <div class="nav__download">
+            <ul>
+                <li class="download--li"><img src="assets/images/applestore.png" alt=""> <a href="">Apple Store</a></li>
+                <li class="download--li"> <img src="assets/images/playstore.png" alt=""> <a href="">Play Store</a></li>
+            </ul>
+        </div>
+    </nav><!--nav-->
+    <section id="map" class="section-map">
+           
+    </section><!--section-map-->
+    <section class="section-features"></section><!--section-features-->
+    <footer class="footer"></footer><!--footer-->
+    <script>
+            // Initialize and add the map
+            function initMap() {
+              // The location of Uluru
+              var Salvador = {lat: -12.998962, lng: -38.515069 } ;
+              // The map, centered at Uluru
+              var map = new google.maps.Map(
+                  document.getElementById('map'),{zoom: 12, center: Salvador});
+              // The marker, positioned at Uluru
+              var marker = new google.maps.Marker({position: Salvador, map: map});
+              // verifica se o navegador tem suporte a geolocalização
+if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position){ // callback de sucesso
+        // ajusta a posição do marker para a localização do usuário
+        marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+    }, 
+    function(error){ // callback de erro
+      
+    });
+} else {
+    console.log('Navegador não suporta Geolocalização!');
+}
+
+            }
+            
+                </script>
+                <!--Load the API from the specified URL
+                * The async attribute allows the browser to render the page while the API loads
+                * The key parameter will contain your own API key (which is not needed for this tutorial)
+                * The callback parameter executes the initMap() function
+                -->
+                <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4-L1sjESiXBaMW6DgyGoxsxJTahh3908&callback=initMap">
+                </script>
+                <script type="text/javascript" src="assets/js/html5shiv.js"></script>
+                <script type="text/javascript" src="assets/js/jquery.js"></script>
+                <script type="text/javascript" src="assets/js/function.js"></script>
+</body>
+</html>
