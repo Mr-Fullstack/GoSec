@@ -62,10 +62,10 @@ li>img{width: 25px; align-self: center;}
 
 .section-map{ width: 100%; height: 600px; z-index: 1;  margin-top: -82px;}
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 720px) {
     .header__wrapper{ 
         flex-direction:column;
-        height: 220px;
+       
     }
     .header__wrapper>form{ 
         margin: 1em;
